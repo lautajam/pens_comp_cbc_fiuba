@@ -1,0 +1,15 @@
+Enunciado: Imagina que se tiene que explicar a una máquina exactamente cómo hacer una tostada con queso,
+pensa qué ingredientes se necesitan con sus cantidades, cómo tiene que ser el espacio de trabajo y los elementos que va a necesitar usar. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para hacer una tostada con queso. */
+
+Se necesita: Un chuchillo para cortar, un cuchillo para untar un tostador (en este caso vamos a usar un tostador de hornalla), un horno (que tenga hornalla), un encendedor, una horma de queso fresco (100 gramos) y una baguette de pan.
+
+Procedimiento:
+  1_ Cortar el extemo de la baguette de pan y luego cortar (con el cuchillo) un trozo de 1cm de ancho
+  2_ Con el encendedor encender la hornalla
+  3_ Poner la feta de pan cortado en el tostador de hornalla
+  3_ Poner el tostador de hornalla en la hornalla 1 minuto
+  4_ Darlo vuelta y repetir paso 3
+  5_ Con ciudado, sacar la rebanada de pan del tostador
+  6_ Utilizar el cuchillo para cortar una feta de medio centimetro del queso fresco
+  7_ Con el cuchillo de untar, untar el queso fresco en el pan tostado
+  8_ Disfrutar tu tostada con queso
