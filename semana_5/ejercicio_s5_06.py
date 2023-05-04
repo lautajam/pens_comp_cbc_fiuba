@@ -12,20 +12,80 @@ Dado que la tupla es inmutable y nosotros no podemos ir agregando elementos a un
 momento deberíamos crear la tupla?
 """
 
-# IDEA
-lista_productos = []
-
-producto = {
-    "codigo_producto": "codigo_producto",
-    "fecha_vencimiento": "fecha_vencimiento",
-    "paso_chequeo": "paso_chequeo"
+shampoo = {
+"codigo_producto": "SH001",
+"fecha_vencimiento": "05/2024",
+"paso_chequeo": False
 }
 
-def eliminar_no_calidad(lista_productos):
-    lista = ("eliminado_1", "eliminado_2", "...")
-    tupla = lista
-    calidad_si = lista_productos["paso_chequeo == si"]
-    cant_calidad = len(calidad_si + 1)
-    return tupla, cant_calidad
+galletas = {
+"codigo_producto": "GA002",
+"fecha_vencimiento": "12/2023",
+"paso_chequeo": True
+}
 
-# H A C E R
+jabon_manos = {
+"codigo_producto": "JM003",
+"fecha_vencimiento": "08/2025",
+"paso_chequeo": False
+}
+
+lapices = {
+"codigo_producto": "LP004",
+"fecha_vencimiento": "N/A",
+"paso_chequeo": False
+}
+
+botella_agua = {
+"codigo_producto": "BW005",
+"fecha_vencimiento": "N/A",
+"paso_chequeo": True
+}
+
+yogur = {
+"codigo_producto": "YG006",
+"fecha_vencimiento": "06/2023",
+"paso_chequeo": True
+}
+
+detergente = {
+"codigo_producto": "DT007",
+"fecha_vencimiento": "10/2024",
+"paso_chequeo": False
+}
+
+cepillo_dientes = {
+"codigo_producto": "CD008",
+"fecha_vencimiento": "N/A",
+"paso_chequeo": True
+}
+
+lamina_papel = {
+"codigo_producto": "LP009",
+"fecha_vencimiento": "N/A",
+"paso_chequeo": False
+}
+
+cuchillo_cocina = {
+"codigo_producto": "CK010",
+"fecha_vencimiento": "N/A",
+"paso_chequeo": True
+}
+
+lista_productos = [shampoo, galletas, jabon_manos, lapices, botella_agua, yogur, detergente, cepillo_dientes, lamina_papel, cuchillo_cocina]
+
+def eliminar_no_calidad(lista_productos):
+    lista_eliminados = []
+    cant_calidad_si = 0
+    for producto in lista_productos:
+        if producto["paso_chequeo"] == False:
+            lista_eliminados.append(producto)
+        else:
+            cant_calidad_si += 1
+    tupla_eliminados = lista_eliminados
+    return tupla_eliminados, cant_calidad_si
+
+tupla_eliminados,cant_calidad_si = eliminar_no_calidad(lista_productos)
+
+print("Eliminados:", tupla_eliminados)
+print("Pasaron calidad:", cant_calidad_si)
