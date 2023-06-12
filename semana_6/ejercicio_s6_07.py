@@ -15,3 +15,40 @@ F1;Rápidos y furiosos
 E4;El padrino
 """
 
+archivo_funciones = open("semana_6/archivos/funciones.csv", "w", encoding="utf-8")
+
+archivo_salas = open("semana_6/archivos/salas.txt", "r", encoding="utf-8")
+archivo_peliculas = open("semana_6/archivos/peliculas.txt", "r", encoding="utf-8")
+
+salas_crudo = archivo_salas.readlines()
+salas = []
+peliculas_crudo = archivo_peliculas.readlines()
+peliculas = []
+
+if len(salas_crudo) >= len(peliculas_crudo):
+    indice = len(salas_crudo)
+
+    for indice in range(0,len(salas_crudo)):
+        salas.append(salas_crudo[indice].replace('\n', ''))
+        peliculas.append(peliculas_crudo[indice].replace('\n', ''))
+
+    for indice in range(0,len(salas_crudo)):
+        archivo_funciones.writelines(salas[indice] + ";" + peliculas[indice] + "\n")
+else:
+
+    for indice in range(0,len(peliculas_crudo)):
+        salas.append(salas_crudo[indice].replace('\n', ''))
+        peliculas.append(peliculas_crudo[indice].replace('\n', ''))
+
+    for indice in range(0,len(peliculas_crudo)):
+        archivo_funciones.writelines(salas[indice] + ";" + peliculas[indice] + "\n")
+
+
+# FORMA LARGA
+# for sala in salas_crudo:
+#     sala = sala.replace('\n', '')
+#     salas.append(sala)
+
+# for pelicula in peliculas_crudo:
+#     pelicula = pelicula.replace('\n', '')
+#     peliculas.append(pelicula)

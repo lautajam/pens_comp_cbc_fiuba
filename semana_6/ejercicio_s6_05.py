@@ -17,6 +17,7 @@ Nombre producto: cuadernos
 Código producto: 41611
 Precio por unidad: 500
 Stock: 130
+
 b. Hacer una función que reciba un diccionario que describa una línea del archivo y lo agregue, es
 decir que si se recibe un diccionario del tipo
 {
@@ -28,9 +29,8 @@ decir que si se recibe un diccionario del tipo
 
 """
 
-archivo = open("semana_6/archivos/productos.csv", "r", encoding="utf-8")
+archivo = open("semana_6/archivos/productos.csv", "r+", encoding="utf-8")
 texto_crudo = archivo.readlines()
-archivo.close()
 
 def arreglar(texto):
     texto = texto.strip("\n")
@@ -49,4 +49,22 @@ for producto in inventario_lista:
 
 #   B)
 
-#FALTA HACER#
+nuevo_dic = {
+    "nombre": "hojas_A4",
+    "código": 35662,
+    "precio": 600,
+    "stock": 45
+}
+
+def agregar_producto(nuevo_dic):
+    valores = list(nuevo_dic.values())
+    cadena = ""
+    for valor in valores:
+        if cadena == "":
+            archivo.writelines("\n")
+        cadena = cadena + str(valor) + ";"
+    archivo.writelines(cadena)
+
+agregar_producto(nuevo_dic)
+
+archivo.close()
